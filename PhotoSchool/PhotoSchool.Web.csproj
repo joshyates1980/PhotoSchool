@@ -173,12 +173,27 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\48x48-Circle-67-FB.png" />
+    <Content Include="Content\img\48x48-Circle-67-GP.png" />
+    <Content Include="Content\img\48x48-Circle-67-TW.png" />
+    <Content Include="Content\img\48x48-Circle-73-FB.png" />
+    <Content Include="Content\img\48x48-Circle-73-GP.png" />
+    <Content Include="Content\img\48x48-Circle-73-TW.png" />
+    <Content Include="Content\img\camera_hd.jpg" />
+    <Content Include="Content\img\icon1.png" />
+    <Content Include="Content\img\icon2.png" />
+    <Content Include="Content\img\icon3.png" />
+    <Content Include="Content\img\icon4.png" />
+    <Content Include="Content\img\li-marker.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\moto.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\CANON.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
