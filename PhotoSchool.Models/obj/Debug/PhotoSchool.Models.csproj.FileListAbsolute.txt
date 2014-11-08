@@ -3,3 +3,12 @@ D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoScho
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\obj\Debug\PhotoSchool.Models.csprojResolveAssemblyReference.cache
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\obj\Debug\PhotoSchool.Models.dll
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\obj\Debug\PhotoSchool.Models.pdb
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\PhotoSchool.Models.dll.config
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\EntityFramework.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\EntityFramework.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

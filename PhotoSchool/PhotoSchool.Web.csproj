@@ -175,7 +175,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -268,6 +267,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhotoSchool.Data\PhotoSchool.Data.csproj">
+      <Project>{0d6d50cd-f978-41b5-befc-221feaaa2203}</Project>
+      <Name>PhotoSchool.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhotoSchool.Models\PhotoSchool.Models.csproj">
+      <Project>{962f9cc5-9f74-4151-af62-b33c48271a1d}</Project>
+      <Name>PhotoSchool.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
