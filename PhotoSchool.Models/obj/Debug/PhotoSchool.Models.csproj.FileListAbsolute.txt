@@ -1,0 +1,5 @@
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\PhotoSchool.Models.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\PhotoSchool.Models.pdb
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\obj\Debug\PhotoSchool.Models.csprojResolveAssemblyReference.cache
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\obj\Debug\PhotoSchool.Models.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\obj\Debug\PhotoSchool.Models.pdb
