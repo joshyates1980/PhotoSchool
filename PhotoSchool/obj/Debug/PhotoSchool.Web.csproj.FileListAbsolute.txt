@@ -59,3 +59,15 @@ D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoScho
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\PhotoSchool.Models.pdb
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\PhotoSchool.Data.Contracts.dll
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\PhotoSchool.Data.Contracts.pdb
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\AutoMapper.Net4.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\Ninject.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\Ninject.Web.Common.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\Ninject.Web.Mvc.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\PhotoSchool.Web.Infrastructure.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\WebActivatorEx.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\AutoMapper.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\PhotoSchool.Web.Infrastructure.pdb
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\Ninject.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\Ninject.Web.Common.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\Ninject.Web.Mvc.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool\bin\AutoMapper.xml
