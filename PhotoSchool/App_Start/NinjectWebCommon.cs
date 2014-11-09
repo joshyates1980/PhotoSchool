@@ -10,6 +10,10 @@ namespace PhotoSchool.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using System.Data.Entity;
+    using PhotoSchool.Data;
+    using PhotoSchool.Data.Contracts.Repository;
+    using PhotoSchool.Data.Repositories.Base;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +65,12 @@ namespace PhotoSchool.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<DbContext>().To<PhotoSchoolDbContext>();
+
+            kernel.Bind(typeof(IDeletableEntityRepository<>))
+            .To(typeof(DeletableEntityRepository<>));
+
+            kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
         }        
     }
 }
