@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PhotoSchool.Models.Word>
+@{
+    ViewBag.Title = "AllWords";
+}
+<div class="wrap">
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="col-md-8">
+                    @foreach (var word in Model)
+                    {
+                        <div class="post">
+                            <h2 class="title">@word.Name</h2>
+                            <p>@word.Description</p>
+                        </div>
+                    }
+                    @for (int i = 1; i <= ViewBag.Pages; i++)
+                    {
+                        <a class="btn send_btn" href="@Url.Action("AllWords", new { id = i })">@i</a>
+                    }
+                    <br />
+                    <br />
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <div class="widget">
+                            <form class="form-search">
+                                <input type="text" class="input-medium search-query">
+                                <button type="submit" class="btn dark_btn">Search</button>
+                            </form>
+                        </div>
+                        <div class="widget">
+                            <h2 class="title"><span>recent posts</span></h2>
+                            <ul class="recent_post">
+                                <li>
+                                    <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                                    16th July, 2020
+                                    <div class="clear"></div>
+                                </li>
+                                <li>
+                                    <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                                    16th July, 2020
+                                    <div class="clear"></div>
+                                </li>
+                                <li>
+                                    <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
+                                    16th July, 2020
+                                    <div class="clear"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget tags">
+                            <h2 class="title"><span>tags</span></h2>
+                            <a href="#">Lorem ipsum</a>
+                            <a href="#">Dolor</a>
+                            <a href="#">Long established</a>
+                            <a href="#">Sit amet</a>
+                            <a href="#">Latin words</a>
+                            <a href="#">Excepteur sint</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

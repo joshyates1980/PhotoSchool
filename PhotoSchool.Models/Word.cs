@@ -2,10 +2,11 @@
 {
     using PhotoSchool.Data.Contracts.Models;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Word: AuditInfo, IDeletableEntity
+    public class Word: AuditInfo, IDeletableEntity, IOrderable
     {
         [Key]
         public int Id { get; set; }
@@ -20,5 +21,7 @@
         public bool IsDeleted { get; set; }
 
         public DateTime? DeletedOn { get; set; }
+
+        public int OrderBy { get; set; }
     }
 }

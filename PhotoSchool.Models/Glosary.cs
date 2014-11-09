@@ -5,26 +5,14 @@
 
     public class Glosary
     {
+        public Glosary()
+        {
+        this.Words = new HashSet<Word>();
+        }
+
         [Key]
         public int Id { get; set; }
 
-        private ICollection<Word> words;
-
-        public Glosary()
-        {
-            this.words = new HashSet<Word>();
-        }
-
-        public virtual ICollection<Word> Words
-        {
-            get
-            {
-                return this.words;
-            }
-            set
-            {
-                this.words = value;
-            }
-        }
+        public virtual ICollection<Word> Words { get; set; }
     }
 }
