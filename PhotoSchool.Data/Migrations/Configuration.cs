@@ -5,14 +5,16 @@ namespace PhotoSchool.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<PhotoSchool.Data.PhotoSchoolDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<PhotoSchoolDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = true;
+            //TODO remove in production
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(PhotoSchool.Data.PhotoSchoolDbContext context)
+        protected override void Seed(PhotoSchoolDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

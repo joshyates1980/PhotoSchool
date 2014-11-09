@@ -269,6 +269,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PhotoSchool.Data.Contracts\PhotoSchool.Data.Contracts.csproj">
+      <Project>{c658f315-8b61-41dd-91d9-cf30568f90a0}</Project>
+      <Name>PhotoSchool.Data.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhotoSchool.Data\PhotoSchool.Data.csproj">
       <Project>{0d6d50cd-f978-41b5-befc-221feaaa2203}</Project>
       <Name>PhotoSchool.Data</Name>

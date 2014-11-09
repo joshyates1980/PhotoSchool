@@ -57,6 +57,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PhotoSchool.Data.Contracts\PhotoSchool.Data.Contracts.csproj">
+      <Project>{c658f315-8b61-41dd-91d9-cf30568f90a0}</Project>
+      <Name>PhotoSchool.Data.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhotoSchool.Models\PhotoSchool.Models.csproj">
       <Project>{962f9cc5-9f74-4151-af62-b33c48271a1d}</Project>
       <Name>PhotoSchool.Models</Name>

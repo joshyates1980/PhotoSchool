@@ -66,27 +66,30 @@ img {
         background-repeat: no-repeat;
         height: 32px;
         width: 32px;
+        opacity:0.5;
 }
 .follow_us a.facebook:hover {
-        opacity:0.5;
+        opacity:1;
 }
 .follow_us a.twitter {
         background-image: url('img/01_twitter.png');
         background-repeat: no-repeat;
         height: 32px;
         width: 32px;
+        opacity:0.5;
 }
 .follow_us a.twitter:hover {
-        opacity:0.5;
+        opacity:1;
 }
 .follow_us a.gplus {
         background-image: url('img/14_google.png');
         background-repeat: no-repeat;
         height: 32px;
         width: 32px;
+        opacity:0.5;
 }
 .follow_us a.gplus:hover {
-        opacity:0.5;
+        opacity:1;
 }
 .login-css {
     line-height: 5px;
