@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>PhotoSchool</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -13,15 +13,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="logo"><a href="index.html"><img src="~/Content/img/logo.png" alt="logo" /></a></div>
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="@Url.Content("~/Content/img/logo.png")" />
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-7">
+                
+                <div class="col-md-8">
                     <div class="header_right_block">
                         <div class="fright">
                             <form action="#" method="post">
-                                <label for="search">Looking for...</label>
                                 <input id="search" class="inp_search" name="name" type="text" value="Search the Site" onfocus="if (this.value == 'Search the Site') this.value = '';" onblur="if (this.value == '') this.value = 'Search the Site';" />
                             </form>
+                        </div>
+                        <div class="topbar">
+                            @Html.Partial("_LoginPartial")
                         </div>
                         <div class="follow_us">
                             <ul>

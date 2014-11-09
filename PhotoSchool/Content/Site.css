@@ -88,6 +88,24 @@ img {
 .follow_us a.gplus:hover {
         opacity:0.5;
 }
+.login-css {
+    line-height: 5px;
+    color: #9d9d9d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: none;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight:bold;
+}
+
+    .login-css:hover {
+        color: #313131;
+        background: none;
+        font-weight:bold;
+        border-radius:10px;
+    }
 
 /*nav*/
 #main_menu {
