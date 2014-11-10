@@ -23,6 +23,12 @@
 
         public IDbSet<Word> Words { get; set; }
 
+        public IDbSet<SettingMetric> Metrics { get; set; }
+
+        public IDbSet<CameraSetting> Settings { get; set; }
+
+        public IDbSet<CameraSettingMetric> SettingsMetrics { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
