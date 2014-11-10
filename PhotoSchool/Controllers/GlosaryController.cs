@@ -9,31 +9,21 @@
     using System;
     using PhotoSchool.ViewModels.Glosary;
     using AutoMapper.QueryableExtensions;
+    using PhotoSchool.Controllers;
 
-    public class GlosaryController : Controller
+    public class GlosaryController : BaseController
     {
-        private IRepository<Word> words;
         private const int PageSize = 2;
 
-        public GlosaryController():
-            this(new GenericRepository<Word>(new PhotoSchoolDbContext()))
-            {           
-            }
-
-        public GlosaryController(IRepository<Word> words)
+        public GlosaryController(IPhotoSchoolData data)
+            : base(data)
         {
-            this.words = words;
         }
 
         public ActionResult AllWords(int? id)
         {
             int pageNumber = id.GetValueOrDefault(1);
-            var allWords = this.words.All().Select(x => new WordsViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-            }).OrderBy(x => x.Name);
+            var allWords = this.Data.Words.All().OrderBy(x => x.Name);
 
             var articles = allWords.Skip((pageNumber - 1) * PageSize).Take(PageSize);
             ViewBag.Pages = Math.Ceiling((double)allWords.Count() / PageSize);

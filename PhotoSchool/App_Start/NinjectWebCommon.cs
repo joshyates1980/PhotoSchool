@@ -65,6 +65,8 @@ namespace PhotoSchool.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IPhotoSchoolData>().To<PhotoSchoolData>().WithConstructorArgument("context", c => new PhotoSchoolDbContext());
+
             kernel.Bind<DbContext>().To<PhotoSchoolDbContext>();
 
             kernel.Bind(typeof(IDeletableEntityRepository<>))
