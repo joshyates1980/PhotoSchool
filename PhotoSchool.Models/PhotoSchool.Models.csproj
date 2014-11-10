@@ -54,7 +54,6 @@
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="CameraSetting.cs" />
-    <Compile Include="CameraSettingMetric.cs" />
     <Compile Include="Enumerations\SettingType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingMetric.cs" />

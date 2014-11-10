@@ -6,6 +6,7 @@
     using PhotoSchool.Models;
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
 
     public class PhotoSchoolDbContext : IdentityDbContext<ApplicationUser>
@@ -26,8 +27,6 @@
         public IDbSet<SettingMetric> Metrics { get; set; }
 
         public IDbSet<CameraSetting> Settings { get; set; }
-
-        public IDbSet<CameraSettingMetric> SettingsMetrics { get; set; }
 
         public override int SaveChanges()
         {

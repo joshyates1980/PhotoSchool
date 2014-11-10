@@ -1,6 +1,7 @@
 ﻿namespace PhotoSchool.Models
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class SettingMetric
     {
@@ -8,6 +9,8 @@
         public int Id { get; set; }
 
         public string Value { get; set; }
+
+        public string ImageUrl { get; set; }
 
         public int CameraSettingId { get; set; }
 

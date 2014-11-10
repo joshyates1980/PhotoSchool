@@ -42,6 +42,22 @@
             }
         }
 
+        public IRepository<SettingMetric> Metrics
+        {
+            get
+            {
+                return this.GetRepository<SettingMetric>();
+            }
+        }
+
+        public IRepository<CameraSetting> Settings
+        {
+            get
+            {
+                return this.GetRepository<CameraSetting>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();

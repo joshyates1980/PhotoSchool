@@ -6,11 +6,9 @@
 
     public class CameraSetting
     {
-        private ICollection<CameraSettingMetric> metrics;
-
         public CameraSetting()
         {
-            this.metrics = new HashSet<CameraSettingMetric>();
+            this.Metrics = new HashSet<SettingMetric>();
         }
 
         [Key]
@@ -24,16 +22,6 @@
 
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<CameraSettingMetric> Metrics
-        {
-            get
-            {
-                return this.metrics;
-            }
-            set
-            {
-                this.metrics = value;
-            }
-        }
+        public virtual ICollection<SettingMetric> Metrics { get; set; }
     }
 }

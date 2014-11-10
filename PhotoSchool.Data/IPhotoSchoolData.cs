@@ -8,6 +8,8 @@
     {
         IRepository<ApplicationUser> Users { get; }
         IRepository<Word> Words { get; }
+        IRepository<CameraSetting> Settings { get; }
+        IRepository<SettingMetric> Metrics { get; }
 
         int SaveChanges();
     }
