@@ -58,6 +58,38 @@
             }
         }
 
+        public IRepository<Like> Likes
+        {
+            get
+            {
+                return this.GetRepository<Like>();
+            }
+        }
+
+        public IRepository<Comment> Comments
+        {
+            get
+            {
+                return this.GetRepository<Comment>();
+            }
+        }
+
+        public IRepository<Photo> Photos
+        {
+            get
+            {
+                return this.GetRepository<Photo>();
+            }
+        }
+
+        public IRepository<PhotoContest> PhotoContests
+        {
+            get
+            {
+                return this.GetRepository<PhotoContest>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();

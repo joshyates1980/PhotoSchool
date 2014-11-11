@@ -28,6 +28,14 @@
 
         public IDbSet<CameraSetting> Settings { get; set; }
 
+        public IDbSet<Like> Likes { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<Photo> Photos { get; set; }
+
+        public IDbSet<PhotoContest> PhotoContests { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

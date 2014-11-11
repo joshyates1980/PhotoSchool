@@ -10,6 +10,10 @@
         IRepository<Word> Words { get; }
         IRepository<CameraSetting> Settings { get; }
         IRepository<SettingMetric> Metrics { get; }
+        IRepository<Like> Likes { get; }
+        IRepository<Comment> Comments { get; }
+        IRepository<Photo> Photos { get; }
+        IRepository<PhotoContest> PhotoContests { get; }
 
         int SaveChanges();
     }

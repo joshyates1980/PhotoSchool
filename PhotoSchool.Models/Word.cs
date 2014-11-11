@@ -6,7 +6,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Word: AuditInfo, IDeletableEntity, IOrderable
+    public class Word: AuditInfo, IDeletableEntity
     {
         [Key]
         public int Id { get; set; }
