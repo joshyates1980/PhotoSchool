@@ -2,18 +2,26 @@
 @{
     ViewBag.Title = "AllWords";
 }
-<div class="wrap">
+<div class="wrap" id="glosary">
     <div class="container">
         <section>
             <div class="row">
-                <div class="col-md-8">
-                    @foreach (var word in Model)
-                    {
-                        <div class="post">
-                            <h2 class="title">@word.Name</h2>
-                            <p>@word.Description</p>
-                        </div>
-                    }
+                <div class="col-md-12">
+                    
+                        @foreach (var word in Model)
+                        {
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        @word.Name
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    @word.Description
+                                </div>
+                            </div>
+                         }
+
                     @for (int i = 1; i <= ViewBag.Pages; i++)
                     {
                         <a class="btn send_btn" href="@Url.Action("AllWords", new { id = i })">@i</a>
@@ -21,46 +29,41 @@
                     <br />
                     <br />
                 </div>
-                <div class="col-md-4">
-                    <div class="sidebar">
-                        <div class="widget">
-                            <form class="form-search">
-                                <input type="text" class="input-medium search-query">
-                                <button type="submit" class="btn dark_btn">Search</button>
-                            </form>
-                        </div>
-                        <div class="widget">
-                            <h2 class="title"><span>recent posts</span></h2>
-                            <ul class="recent_post">
-                                <li>
-                                    <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-                                    16th July, 2020
-                                    <div class="clear"></div>
-                                </li>
-                                <li>
-                                    <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-                                    16th July, 2020
-                                    <div class="clear"></div>
-                                </li>
-                                <li>
-                                    <div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-                                    16th July, 2020
-                                    <div class="clear"></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="widget tags">
-                            <h2 class="title"><span>tags</span></h2>
-                            <a href="#">Lorem ipsum</a>
-                            <a href="#">Dolor</a>
-                            <a href="#">Long established</a>
-                            <a href="#">Sit amet</a>
-                            <a href="#">Latin words</a>
-                            <a href="#">Excepteur sint</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             </div>
         </section>
+    </div>   
+</div>
+<div class="wrap planning">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#">
+                    <span class="img_icon icon1"></span>
+                    <span class="link_title">I want to learn</span>
+                    Learn more about your camera's settings and and how simple adjustments create beautiful photo effects!
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <span class="img_icon icon2"></span>
+                    <span class="link_title">I want to try</span>
+                    Adjust camera settings, take the shot and get feedback.
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <span class="img_icon icon3"></span>
+                    <span class="link_title">I want to win</span>
+                    Test yourself as we challenge you to prove what you have learnt and take part in our contest!
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <span class="img_icon icon4"></span>
+                    <span class="link_title">I want to join</span>
+                    Join our forum community to share your experience.
+                </a>
+            </div>
+        </div>
     </div>
 </div>
