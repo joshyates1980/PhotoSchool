@@ -14,6 +14,7 @@
         IRepository<Comment> Comments { get; }
         IRepository<Photo> Photos { get; }
         IRepository<PhotoContest> PhotoContests { get; }
+        IRepository<Tip> Tips { get; }
 
         int SaveChanges();
     }

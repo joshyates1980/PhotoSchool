@@ -90,6 +90,14 @@
             }
         }
 
+        public IRepository<Tip> Tips
+        {
+            get
+            {
+                return this.GetRepository<Tip>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();

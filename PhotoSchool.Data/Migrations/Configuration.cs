@@ -25,6 +25,7 @@ namespace PhotoSchool.Data.Migrations
         {
             this.SeedWords(context);         
             this.SeedSettings(context);
+            this.SeedTips(context);
         }
 
         protected void SeedWords(PhotoSchoolDbContext context)
@@ -225,6 +226,28 @@ namespace PhotoSchool.Data.Migrations
             });
 
             context.Settings.AddOrUpdate(Settings.ToArray());
+            context.SaveChanges();
+        }
+
+        protected void SeedTips(PhotoSchoolDbContext context)
+        {
+            if (context.Tips.Any())
+            {
+                return;
+            }
+
+            context.Tips.Add(new Tip { Content = "There are two Priority Modes on your camera that can help make shooting easier while still having some control over the exposure of your image. When you’re shooting in a priority mode you decide which exposure setting you want to control – Aperture or Shutter Speed, while the camera can automatically adjust the others to ensure a good exposure." });
+            context.Tips.Add(new Tip { Content = "When in Aperture Priority mode keep in mind that when you use a small Aperture, the Shutter Speed will adjust to stay open longer. Long shutter times will pick-up any hand movement so use a tripod." });
+            context.Tips.Add(new Tip { Content = "Shutter Priority Mode (represented by Tv), allows you to focus on how motion is being captured, while automatically setting your Aperture and ISO. So if you’re shooting a track meet or a car race, you will probably want to use Shutter Priority." });
+            context.Tips.Add(new Tip { Content = "Think of Aperture and Shutter Speed as balanced variables. If your settings are giving you a good exposure but you want to increase the size of your Aperture by one stop (or click) - you will also need to decrease your shutter speed by one stop to get the same balanced exposure." });
+            context.Tips.Add(new Tip { Content = "Remember that using a very high ISO may add some digital noise. So always start with a low ISO and adjust if necessary to achieve the effect you want." });
+            context.Tips.Add(new Tip { Content = "When taking pictures, just remember the following: ISO affects Noise, Aperture affects Depth-of-Field (DOF), Shutter affects Motion." });
+            context.Tips.Add(new Tip { Content = "Be aware that a longer Shutter Speed will show any movement from your hand. Try steadying your camera or using a tripod." });
+            context.Tips.Add(new Tip { Content = "Remember that sometimes natural light gives you the most beautiful results." });
+            context.Tips.Add(new Tip { Content = "By adjusting your exposure settings you can capture amazing moments in low light and bright light." });
+            context.Tips.Add(new Tip { Content = "On a bright sunny day using a smaller aperture and short shutter speed may get you a good exposure." });
+            context.Tips.Add(new Tip { Content = "Shooting a scene with low light is going to need a larger aperture and/or a longer shutter speed. Remember to steady the camera if you are using a longer shutter speed." });
+
             context.SaveChanges();
         }
     }

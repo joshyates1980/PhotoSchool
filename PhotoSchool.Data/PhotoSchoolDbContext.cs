@@ -36,6 +36,8 @@
 
         public IDbSet<PhotoContest> PhotoContests { get; set; }
 
+        public IDbSet<Tip> Tips { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
