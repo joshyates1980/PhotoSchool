@@ -1038,6 +1038,75 @@ ul.recent_post div a:hover {color:#d00b01;
     padding: 10px;
     text-align: center;
 }
+.dark_btn {
+    background: #313131;
+    color: #fff;
+}
+
+    .dark_btn:hover {
+        color: #fff;
+    }
+
+.send_btn {
+    color: #fff;
+    background: #d00b01 !important;
+}
+
+    .send_btn:hover {
+        color: #fff;
+    }
+
+.bottom-space {
+    margin-bottom: 5px;
+}
+
+.login-css {
+    line-height: 18px;
+    color: #d1d1d1;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: none;
+    text-decoration: none;
+    padding: 0;
+    text-align: left;
+}
+
+    .login-css:hover {
+        color: #313131;
+        background: none;
+    }
+
+.form-control {
+    width: 500px;
+}
+
+a {
+    color: #d00b01;
+}
+
+    a:hover {
+        color: #313131;
+    }
+
+.top-bottom-space {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.descr-heading {
+    color: #d00b01;
+}
+
+.with-numbers {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.control-label{
+    font-size: 16px;
+}
 
 
 
