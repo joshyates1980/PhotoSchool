@@ -14,9 +14,10 @@ namespace PhotoSchool
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Display",
-                url: "photos/{id}/{url}",
-                defaults: new { controller = "Photos", action = "PhotoDetails" }
+                name: "Display photo's details",
+                url: "photos/{action}/{id}",
+                defaults: new { controller = "Photos", action = "PhotoDetails", id = UrlParameter.Optional },
+                namespaces: new[] { "PhotoSchool.Web.Controllers"}
             );
 
             //routes.MapRoute(

@@ -26,6 +26,7 @@ namespace PhotoSchool.Data.Migrations
             this.SeedWords(context);         
             this.SeedSettings(context);
             this.SeedTips(context);
+            this.SeedPhotos(context);
         }
 
         protected void SeedWords(PhotoSchoolDbContext context)
@@ -247,6 +248,35 @@ namespace PhotoSchool.Data.Migrations
             context.Tips.Add(new Tip { Content = "By adjusting your exposure settings you can capture amazing moments in low light and bright light." });
             context.Tips.Add(new Tip { Content = "On a bright sunny day using a smaller aperture and short shutter speed may get you a good exposure." });
             context.Tips.Add(new Tip { Content = "Shooting a scene with low light is going to need a larger aperture and/or a longer shutter speed. Remember to steady the camera if you are using a longer shutter speed." });
+
+            context.SaveChanges();
+        }
+
+        protected void SeedPhotos(PhotoSchoolDbContext context)
+        {
+            if (context.Photos.Any())
+            {
+                return;
+            }
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "good exposure 1",
+                ImageUrl = "/Content/img/examples/ge1.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "good exposure 2",
+                ImageUrl = "/Content/img/examples/ge2.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "good exposure 3",
+                ImageUrl = "/Content/img/examples/ge3.jpg"
+            });
+
 
             context.SaveChanges();
         }

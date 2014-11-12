@@ -1,0 +1,33 @@
+﻿﻿﻿﻿@model IEnumerable<PhotoSchool.ViewModels.Photo.PhotoViewModel>
+
+<div class="page_container">
+    <div class="wrap">
+        <div class="container">
+            <section>
+                <div class="row pad5">
+                    <div class="projects">
+                        @foreach (var photo in Model)
+                        {
+                            <div class="col-md-4 element category01" data-category="category01">
+                                <div class="hover_img">
+                                    <img src="@photo.ImageUrl" />
+                                    <span class="portfolio_link"><a href="@Url.Action("PhotoDetails", new { @photo.Id })">View item</a></span>
+                                </div>
+                                <div class="item_description">
+                                    <h6><a href="@Url.Action("PhotoDetails", new { @photo.Id })">Link</a></h6>
+                                    <div class="descr">@photo.ShortDescription</div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        @for (int i = 1; i <= ViewBag.Pages; i++)
+                        {
+                            <a class="btn send_btn" href="@Url.Action("AllPhotos", new { id = i })">@i</a>
+                        }
+                        </div>
+                    </div>
+            </section>
+        </div>
+    </div>
+</div>

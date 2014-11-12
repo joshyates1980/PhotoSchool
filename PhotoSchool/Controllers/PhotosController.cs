@@ -18,11 +18,12 @@
 
     public class PhotosController : BaseController
     {
-        private const int PageSize = 9;
+        private const int PageSize = 3;
 
         public PhotosController(IPhotoSchoolData data)
             : base(data)
         {
+
         }
 
         public ActionResult AllPhotos(int? id)
@@ -33,6 +34,7 @@
                 Id = x.Id,
                 ShortDescription = x.ShortDescription,
                 ImageUrl = x.ImageUrl
+
             }).OrderBy(x => x.Id);
 
             var photos = allPhotos.Skip((pageNumber - 1) * PageSize).Take(PageSize);

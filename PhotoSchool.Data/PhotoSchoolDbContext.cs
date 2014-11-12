@@ -40,6 +40,8 @@
 
         public IDbSet<Tip> Tips { get; set; }
 
+        public IDbSet<View> Views { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

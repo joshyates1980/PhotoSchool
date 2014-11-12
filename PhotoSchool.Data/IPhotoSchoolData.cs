@@ -16,6 +16,7 @@
         IRepository<Photo> Photos { get; }
         IRepository<PhotoContest> PhotoContests { get; }
         IRepository<Tip> Tips { get; }
+        IRepository<View> Views { get; }
 
         int SaveChanges();
     }
