@@ -23,11 +23,17 @@
         public ActionResult AllWords(int? id)
         {
             int pageNumber = id.GetValueOrDefault(1);
-            var allWords = this.Data.Words.All().OrderBy(x => x.Name);
 
-            var articles = allWords.Skip((pageNumber - 1) * PageSize).Take(PageSize);
+            var allWords = this.Data.Words.All().Select(x => new WordsViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description
+            }).OrderBy(x => x.Name);
+
+            var glosary = allWords.Skip((pageNumber - 1) * PageSize).Take(PageSize);
             ViewBag.Pages = Math.Ceiling((double)allWords.Count() / PageSize);
-            return View(allWords);
+            return View(glosary);
         }
     }
 }

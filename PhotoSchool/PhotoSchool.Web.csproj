@@ -191,12 +191,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Photos\Controllers\PhotosController.cs" />
-    <Compile Include="Areas\Photos\PhotosAreaRegistaration.cs" />
-    <Compile Include="Areas\Photos\ViewModels\Actions\ActionViewModel.cs" />
-    <Compile Include="Areas\Photos\ViewModels\Comment\CommentViewModel.cs" />
-    <Compile Include="Areas\Photos\ViewModels\Comment\SubmitCommentViewModel.cs" />
-    <Compile Include="Areas\Photos\ViewModels\Photo\PhotoViewModel.cs" />
+    <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
@@ -216,6 +211,10 @@
     <Compile Include="ViewModels\Glosary\WordsViewModel.cs" />
     <Compile Include="ViewModels\PhotoContest\PhotoContestViewModel.cs" />
     <Compile Include="ViewModels\Tip\TipViewModel.cs" />
+    <Compile Include="ViewModels\Actions\ActionViewModel.cs" />
+    <Compile Include="ViewModels\Comment\CommentViewModel.cs" />
+    <Compile Include="ViewModels\Comment\SubmitCommentViewModel.cs" />
+    <Compile Include="ViewModels\Photo\PhotoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -484,10 +483,6 @@
     <Content Include="Content\kendo\images\kendoui.woff" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Photos\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Photos\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Photos\Views\Photos\PhotoDetails.cshtml" />
-    <Content Include="Areas\Photos\Views\Web.config" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -555,6 +550,11 @@
     <Content Include="Views\PhotoContests\_ContestParticipantsPartial.cshtml" />
     <Content Include="Views\Shared\_CommentPartial.cshtml" />
     <Content Include="Views\Tip\AllTips.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Photos\PhotoDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -562,7 +562,6 @@
     <Folder Include="Views\Aperture\" />
     <Folder Include="Views\Exposure\" />
     <Folder Include="Views\ISO\" />
-    <Folder Include="Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\ShutterSpeed\" />
   </ItemGroup>
   <ItemGroup>

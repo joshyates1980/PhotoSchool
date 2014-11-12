@@ -1,6 +1,8 @@
 ﻿namespace PhotoSchool.Controllers
 {
     using PhotoSchool.Data;
+    using PhotoSchool.ViewModels.Tip;
+    using AutoMapper.QueryableExtensions;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -16,8 +18,13 @@
 
         public ActionResult AllTips(int? id)
         {
-            var allTips = this.Data.Tips.All();
-            return View(allTips);
+            var tips = this.Data.Tips.All().Select(x => new TipViewModel
+            {
+                Id = x.Id,
+                Content = x.Content
+            }).OrderBy(x => x.Id);
+            ;
+            return View(tips);
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿namespace PhotoSchool.ViewModels.Glosary
 {
     using PhotoSchool.Models;
-    using PhotoSchool.Web.Infrastructure.Mapping;
 
-    public class WordsViewModel: IMapFrom<Word>
+    public class WordsViewModel
     {
         public int Id { get; set; }
 
