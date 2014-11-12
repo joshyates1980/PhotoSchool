@@ -26,6 +26,14 @@
             this.repositories = new Dictionary<Type, object>();
         }
 
+        public IRepository<PhotoSchool.Models.Action> Actions
+        {
+            get
+            {
+                return this.GetRepository<PhotoSchool.Models.Action>();
+            }
+        }
+
         public IRepository<ApplicationUser> Users
         {
             get

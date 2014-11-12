@@ -4,6 +4,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using PhotoSchool.Data.Contracts.Models;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Security.Claims;
     using System.Threading.Tasks;
@@ -15,7 +16,13 @@
         {
             // This will prevent UserManager.CreateAsync from causing exception
             this.CreatedOn = DateTime.Now;
+            this.Photos = new HashSet<Photo>();
+            this.Contests = new HashSet<PhotoContest>();
         }
+
+        public virtual ICollection<Photo> Photos { get; set; }
+
+        public virtual ICollection<PhotoContest> Contests { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

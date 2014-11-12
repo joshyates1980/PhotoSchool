@@ -8,11 +8,14 @@
         {
             this.Comments = new HashSet<Comment>();
             this.Likes = new HashSet<Like>();
+            this.Actions = new HashSet<Action>();
         }
 
         public int Id { get; set; }
 
         public string ShortDescription { get; set; }
+
+        public int ViewCount { get; set; }
 
         public string ImageUrl { get; set; }
 
@@ -23,6 +26,8 @@
         public virtual ICollection<Comment> Comments { get; set; }
 
         public virtual ICollection<Like> Likes { get; set; }
+
+        public virtual ICollection<Action> Actions { get; set; }
 
         public string PhotoContestId { get; set; }
 

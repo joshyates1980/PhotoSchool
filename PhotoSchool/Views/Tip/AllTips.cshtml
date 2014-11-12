@@ -1,0 +1,24 @@
+﻿﻿﻿@model IEnumerable<PhotoSchool.Models.Tip>
+@{
+    ViewBag.Title = "AllTips";
+}
+<div class="wrap">
+    <div class="container">
+        <section class="top-bottom-space">
+            <div class="row">
+                
+                @foreach (var tip in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body tips-order">
+                                @tip.Content
+                            </div>
+                        </div>
+                    </div>
+                }
+        </div>
+    </section>
+</div>
+</div>
+

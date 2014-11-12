@@ -22,6 +22,8 @@
             return new PhotoSchoolDbContext();
         }
 
+        public IDbSet<PhotoSchool.Models.Action> Actions { get; set; }
+
         public IDbSet<Word> Words { get; set; }
 
         public IDbSet<SettingMetric> Metrics { get; set; }

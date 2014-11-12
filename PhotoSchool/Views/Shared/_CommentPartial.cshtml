@@ -1,0 +1,12 @@
+﻿﻿@model PhotoSchool.Areas.Photos.ViewModels.Comment.CommentViewModel
+<li>
+    <div class="comment_right">
+        <div class="comment_info">
+            Posted by <a href="#">@Model.AuthorUsername</a> <span>|</span> @Html.DisplayFor(x => Model.CreatedOn)
+        </div>
+        <div class="container">
+            @Model.Text
+        </div>
+    </div>
+    <div class="clear"></div>
+</li>

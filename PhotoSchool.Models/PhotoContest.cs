@@ -9,6 +9,7 @@
         public PhotoContest()
         {
             this.Photos = new HashSet<Photo>();
+            this.Participants = new HashSet<ApplicationUser>();
         }
 
         [Key]
@@ -23,5 +24,7 @@
         public DateTime? Finish { get; set; }
 
         public virtual ICollection<Photo> Photos { get; set; }
+
+        public virtual ICollection<ApplicationUser> Participants { get; set; }
     }
 }

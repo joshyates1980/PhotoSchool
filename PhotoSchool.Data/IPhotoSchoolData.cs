@@ -6,6 +6,7 @@
 
     public interface IPhotoSchoolData
     {
+        IRepository<PhotoSchool.Models.Action> Actions { get; }
         IRepository<ApplicationUser> Users { get; }
         IRepository<Word> Words { get; }
         IRepository<CameraSetting> Settings { get; }

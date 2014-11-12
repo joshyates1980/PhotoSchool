@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="CameraSetting.cs" />
     <Compile Include="Comment.cs" />
