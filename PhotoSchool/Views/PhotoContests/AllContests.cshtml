@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PhotoSchool.ViewModels.PhotoContest.PhotoContestViewModel>
+
+<div class="container">
+    <div class="page_container">
+        <div class="wrap">
+            <div class="container inner_content">
+                <div class="row">
+                    <div class="projects">
+                        @foreach (var contest in Model)
+                        {
+                            <div class="col-md-6 element category01 isotope-item" data-category="category01">
+                                <div class="item_description">
+                                    <h3>
+                                        <a href="@Url.Action("PhotoContestDetails", "PhotoContests", new { area = String.Empty, contest.Id })">>@contest.Title</a>
+                                    </h3>
+                                    <div class="descr">@contest.Description</div>
+                                </div>
+                            </div>
+                        }
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

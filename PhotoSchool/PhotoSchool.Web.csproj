@@ -191,6 +191,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\PhotoContestController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -556,10 +558,13 @@
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Photos\PhotoDetails.cshtml" />
     <Content Include="Views\Photos\AllPhotos.cshtml" />
+    <Content Include="Views\Images\UploadImage.cshtml" />
+    <Content Include="Views\PhotoContests\AllContests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\" />
+    <Folder Include="Content\img\contests\" />
     <Folder Include="Views\Aperture\" />
     <Folder Include="Views\Exposure\" />
     <Folder Include="Views\ISO\" />
