@@ -27,12 +27,12 @@ namespace PhotoSchool.Controllers
             if (image != null)
             {
                 image.SaveAs(Server.MapPath("~/Content/img/contests/") + image.FileName);
-                var photo = this.Data.Photos.All().FirstOrDefault(x => x.PhotoContestId == contestId);
-                photo.ImageUrl = "/Content/img/contests" + image.FileName;
+                //var photo = this.Data.Photos.All().FirstOrDefault(x => x.PhotoContestId == contestId);
+                //photo.ImageUrl = "/Content/img/contests" + image.FileName;
 
                 this.Data.SaveChanges();
 
-                return RedirectToAction("PhotoDetails", "Photos", new { id = photo.Id });
+                return RedirectToAction("PhotoDetails", "Photos"/*, new { id = photo.Id }*/);
             }
 
             return RedirectToAction("AllPhotos", "Photos");

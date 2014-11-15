@@ -29,7 +29,7 @@ namespace PhotoSchool.Data.Migrations
             this.SeedSettings(context);
             this.SeedTips(context);
             this.SeedPhotos(context);
-            this.SeedPhotoContest(context);
+            //this.SeedPhotoContest(context);
         }
 
         protected void SeedWords(PhotoSchoolDbContext context)
@@ -264,47 +264,101 @@ namespace PhotoSchool.Data.Migrations
 
             context.Photos.Add(new Photo
             {
-                ShortDescription = "Good exposure 1",
+                ShortDescription = "Good exposure",
                 ImageUrl = "/Content/img/examples/ge1.jpg"
             });
 
             context.Photos.Add(new Photo
             {
-                ShortDescription = "Good exposure 2",
+                ShortDescription = "Good exposure",
                 ImageUrl = "/Content/img/examples/ge2.jpg"
             });
 
             context.Photos.Add(new Photo
             {
-                ShortDescription = "Good exposure 3",
+                ShortDescription = "Good exposure",
                 ImageUrl = "/Content/img/examples/ge3.jpg"
             });
 
-            context.SaveChanges();
-        }
-
-        protected void SeedPhotoContest(PhotoSchoolDbContext context)
-        {
-            if (context.PhotoContests.Any())
+            context.Photos.Add(new Photo
             {
-                return;
-            }
+                ShortDescription = "Shallow depth of field",
+                ImageUrl = "/Content/img/examples/sdf1.jpg"
+            });
 
-            this.Photos = new List<Photo>();
-            Photos.Add(new Photo { ShortDescription = "Shallow depth field 1", ImageUrl = "/Content/img/examples/sdf1.jpg" });
-            Photos.Add(new Photo { ShortDescription = "Shallow depth field 2", ImageUrl = "/Content/img/examples/sdf2.jpg" });
-            Photos.Add(new Photo { ShortDescription = "Shallow depth field 3", ImageUrl = "/Content/img/examples/sdf3.jpg" });
-            
-            context.PhotoContests.Add(new PhotoContest
+            context.Photos.Add(new Photo
             {
-                Title = "Shallow Depth Field Contest",
-                Description = "Show us you know what 'shallow depth field' means. Vote for the best photo or join the contest now if you dare!",
-                Start = DateTime.Now,
-                Finish = new DateTime(2014, 1, 12),
-                Photos = Photos
+                ShortDescription = "Shallow depth of field",
+                ImageUrl = "/Content/img/examples/sdf2.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Shallow depth of field",
+                ImageUrl = "/Content/img/examples/sdf3.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Wide depth of field",
+                ImageUrl = "/Content/img/examples/wdf1.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Wide depth of field",
+                ImageUrl = "/Content/img/examples/wdf2.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Wide depth of field",
+                ImageUrl = "/Content/img/examples/wdf3.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Show motion",
+                ImageUrl = "/Content/img/examples/sm1.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Show motion",
+                ImageUrl = "/Content/img/examples/sm2.jpg"
+            });
+
+            context.Photos.Add(new Photo
+            {
+                ShortDescription = "Show motion",
+                ImageUrl = "/Content/img/examples/sm3.jpg"
             });
 
             context.SaveChanges();
         }
+
+        //protected void SeedPhotoContest(PhotoSchoolDbContext context)
+        //{
+        //    if (context.PhotoContests.Any())
+        //    {
+        //        return;
+        //    }
+
+        //    this.Photos = new List<Photo>();
+        //    Photos.Add(new Photo { ShortDescription = "Shallow depth field 1", ImageUrl = "/Content/img/examples/sdf1.jpg" });
+        //    Photos.Add(new Photo { ShortDescription = "Shallow depth field 2", ImageUrl = "/Content/img/examples/sdf2.jpg" });
+        //    Photos.Add(new Photo { ShortDescription = "Shallow depth field 3", ImageUrl = "/Content/img/examples/sdf3.jpg" });
+            
+        //    context.PhotoContests.Add(new PhotoContest
+        //    {
+        //        Title = "Shallow Depth Field Contest",
+        //        Description = "Show us you know what 'shallow depth field' means. Vote for the best photo or join the contest now if you dare!",
+        //        Start = DateTime.Now,
+        //        Finish = new DateTime(2014, 1, 12),
+        //        Photos = Photos
+        //    });
+
+        //    context.SaveChanges();
+        //}
     }
 }

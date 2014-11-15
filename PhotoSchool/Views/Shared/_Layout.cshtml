@@ -12,7 +12,7 @@
     <div class="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="logo">
                         <a href="@Url.Action("Index", "Home")">
                             <img src="@Url.Content("~/Content/img/logo.png")" />
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div class="header_right_block fright">
                         <div class="fleft input-group">
                             <form action="#" method="post">
@@ -33,22 +33,73 @@
                         <div class="fleft topbar">
                             @Html.Partial("_LoginPartial")
                         </div>
-                        <div class="fleft follow_us">
-                            <ul>
-                                <li><a href="#" class="facebook">Facebook</a></li>
-                                <li><a href="#" class="gplus">Google+</a></li>
-                                <li><a href="#" class="twitter">Twitter</a></li>
-                            </ul>
-                        </div>
+                        
                         <div class="clear"></div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                    <div class="fleft follow_us">
+                        <ul>
+                            <li><a href="#" class="facebook">Facebook</a></li>
+                            <li><a href="#" class="gplus">Google+</a></li>
+                            <li><a href="#" class="twitter">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <nav id="main_menu">
+                            <div class="menu_wrap">
+                                <ul class="nav sf-menu">
+                                    <li>@Html.ActionLink("Shutter Speed", "ShutterSpeedSettings", "Settings")</li>
+                                    <li>@Html.ActionLink("Aperture", "ApertureSettings", "Settings")</li>
+                                    <li>@Html.ActionLink("Exposure", "ExposureSettings", "Settings")</li>
+                                    <li>@Html.ActionLink("ISO", "IsoSettings", "Settings")</li>
+                                    <li>@Html.ActionLink("Examples", "AllPhotos", "Photos")</li>
+                                    <li>@Html.ActionLink("Glossary", "AllWords", "Glosary")</li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
         </div>
     </div>
 
         @RenderBody()
 
+    <div class="wrap planning">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="@Url.Action("AllTips", "Tip")">
+                        <span class="img_icon icon1"></span>
+                        <span class="link_title">I want to learn</span>
+                        Learn more about your camera's settings and and how simple adjustments create beautiful photo effects!
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <span class="img_icon icon2"></span>
+                        <span class="link_title">I want to try</span>
+                        Adjust camera settings, take the shot and get feedback.
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <span class="img_icon icon3"></span>
+                        <span class="link_title">I want to win</span>
+                        Test yourself as we challenge you to prove what you have learnt and take part in our contest!
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">
+                        <span class="img_icon icon4"></span>
+                        <span class="link_title">I want to join</span>
+                        Join our forum community to share your experience.
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="footer_bottom">
         <div class="wrap">
             <div class="container">

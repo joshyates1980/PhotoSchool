@@ -12,7 +12,7 @@
     public class PhotoSchoolDbContext : IdentityDbContext<ApplicationUser>
     {
         public PhotoSchoolDbContext()
-            : base("PhotoSchoolConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<PhotoSchoolDbContext, Configuration>());
         }

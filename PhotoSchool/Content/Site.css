@@ -23,7 +23,11 @@ body { overflow-x:hidden;
 }
 .header {
 	background:#fff;
-	border-bottom:5px #313131 solid;
+	padding: 10px 0;
+}
+.row img.col-md-12{
+    padding:0;
+    border:5px solid #000;
 }
 .fleft {float:left;
 }
@@ -44,13 +48,13 @@ img {
 }
 .logo img {max-width:100%;
 }
-.header .container {
+/*.header .container {
     margin:0px;
     padding:10px;
     width:100%;
-}
+}*/
 .follow_us {
-    width: 170px;
+    margin: 0 70px;
 }
 .follow_us ul li {
 	padding:0;
@@ -120,8 +124,8 @@ img {
 	float:right;
 }
 .menu_wrap {
-  padding-top: 50px;
-  float:right;
+  /*padding-top: 50px;
+  float:right;*/
 }
 .menu_wrap .nav li {
   margin: 0;
@@ -273,10 +277,12 @@ img {
 .page_container {
 	padding-bottom:40px;
 }
-.main_bg{
+/*.main_bg{
     background:url('img/camera_hd.jpg') no-repeat;
     height:500px;
     border-bottom:5px solid #313131;
+}*/
+.wrap {
 }
 .separator {
 }
@@ -286,7 +292,6 @@ img {
 }
 
 .planning {
-	padding:50px 0px;
 	text-align:center;
 }
 .planning a {
@@ -412,7 +417,12 @@ h2.upper {
 	position:relative;
 	background-color:#fff;
 }
-.hover_img img, .post_carousel img {border-radius:3px;
+.hover_img img, .post_carousel img {
+    border-radius:3px;
+}
+.span8 .post img{
+    margin: 0 13%;
+    width:74%;
 }
 .portfolio_zoom1 {
 	display:none;

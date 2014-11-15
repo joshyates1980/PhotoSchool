@@ -212,6 +212,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Glosary\WordsViewModel.cs" />
     <Compile Include="ViewModels\PhotoContest\PhotoContestViewModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingViewModel.cs" />
     <Compile Include="ViewModels\Tip\TipViewModel.cs" />
     <Compile Include="ViewModels\Actions\ActionViewModel.cs" />
     <Compile Include="ViewModels\Comment\CommentViewModel.cs" />
@@ -560,15 +561,15 @@
     <Content Include="Views\Photos\AllPhotos.cshtml" />
     <Content Include="Views\Images\UploadImage.cshtml" />
     <Content Include="Views\PhotoContests\AllContests.cshtml" />
+    <Content Include="Views\Settings\ExposureSettings.cshtml" />
+    <Content Include="Views\Settings\ApertureSettings.cshtml" />
+    <Content Include="Views\Settings\IsoSettings.cshtml" />
+    <Content Include="Views\Settings\ShutterSpeedSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Content\img\contests\" />
-    <Folder Include="Views\Aperture\" />
-    <Folder Include="Views\Exposure\" />
-    <Folder Include="Views\ISO\" />
-    <Folder Include="Views\ShutterSpeed\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

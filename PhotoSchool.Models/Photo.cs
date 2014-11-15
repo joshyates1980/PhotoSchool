@@ -30,8 +30,8 @@
 
         public virtual ICollection<View> Views { get; set; }
 
-        public int PhotoContestId { get; set; }
+        //public int PhotoContestId { get; set; }
 
-        public virtual PhotoContest PhotoContest { get; set; }
+        //public virtual PhotoContest PhotoContest { get; set; }
     }
 }

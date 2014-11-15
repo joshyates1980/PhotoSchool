@@ -6,6 +6,7 @@
     using System;
     using System.Web.Mvc;
 
+    [HandleError]
     public abstract class BaseController : Controller
     {
         private ApplicationUser currentUser;
@@ -24,7 +25,7 @@
                 if (this.currentUser == null)
                 {
                     var userId = User.Identity.GetUserId();
-                    var user = this.Data.Users.GetById(int.Parse(userId));
+                    var user = this.Data.Users.GetById(userId);
                     this.currentUser = user;
                 }
 
