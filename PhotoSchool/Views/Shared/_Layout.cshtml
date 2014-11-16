@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhotoSchool</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryajax")
     @Scripts.Render("~/bundles/modernizr")
-
+    @RenderSection("styles", required: false)
 </head>
 <body>
     <div class="header">
@@ -14,7 +17,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="logo">
-                        <a href="@Url.Action("Index", "Home")">
+                        <a href="@Url.Action("Index", "Home", new { area = String.Empty })">
                             <img src="@Url.Content("~/Content/img/logo.png")" />
                         </a>
                     </div>
@@ -22,6 +25,9 @@
                 
                 <div class="col-md-8">
                     <div class="header_right_block fright">
+                        <div class="fleft topbar">
+                            @Html.Partial("_LoginPartial")
+                        </div>
                         <div class="fleft input-group">
                             <form action="#" method="post">
                                 <input id="search" class="form-control" name="name" type="text" value="Search the Site" onfocus="if (this.value == 'Search the Site') this.value = '';" onblur="if (this.value == '') this.value = 'Search the Site';" />
@@ -29,11 +35,7 @@
                                     <span class="glyphicon glyphicon-search"></span>
                                 </span>
                             </form>
-                        </div>
-                        <div class="fleft topbar">
-                            @Html.Partial("_LoginPartial")
-                        </div>
-                        
+                        </div>                  
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -41,21 +43,26 @@
             <div class="row">
                     <div class="fleft follow_us">
                         <ul>
-                            <li><a href="#" class="facebook">Facebook</a></li>
-                            <li><a href="#" class="gplus">Google+</a></li>
-                            <li><a href="#" class="twitter">Twitter</a></li>
+                            <li><a href="https://www.facebook.com/" class="facebook">Facebook</a></li>
+                            <li><a href=https://plus.google.com/ class="gplus">Google+</a></li>
+                            <li><a href="https://twitter.com/" class="twitter">Twitter</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 custom">
                         <nav id="main_menu">
                             <div class="menu_wrap">
                                 <ul class="nav sf-menu">
-                                    <li>@Html.ActionLink("Shutter Speed", "ShutterSpeedSettings", "Settings")</li>
-                                    <li>@Html.ActionLink("Aperture", "ApertureSettings", "Settings")</li>
-                                    <li>@Html.ActionLink("Exposure", "ExposureSettings", "Settings")</li>
-                                    <li>@Html.ActionLink("ISO", "IsoSettings", "Settings")</li>
-                                    <li>@Html.ActionLink("Examples", "AllPhotos", "Photos")</li>
-                                    <li>@Html.ActionLink("Glossary", "AllWords", "Glosary")</li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li>@Html.ActionLink("Admin", "Navigation", "Home", new { area = "Administration" }, new { })</li>
+                                    }
+                                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = String.Empty }, new { })</li>
+                                    <li>@Html.ActionLink("Shutter Speed", "ShutterSpeedSettings", "Settings", new { area = String.Empty }, new { })</li>
+                                    <li>@Html.ActionLink("Aperture", "ApertureSettings", "Settings", new { area = String.Empty }, new { })</li>
+                                    <li>@Html.ActionLink("Exposure", "ExposureSettings", "Settings", new { area = String.Empty }, new { })</li>
+                                    <li>@Html.ActionLink("ISO", "IsoSettings", "Settings", new { area = String.Empty }, new { })</li>
+                                    <li>@Html.ActionLink("Examples", "AllPhotos", "Photos", new { area = String.Empty }, new { })</li>
+                                    <li>@Html.ActionLink("Glossary", "AllWords", "Glosary", new { area = String.Empty }, new { })</li>
                                 </ul>
                             </div>
                         </nav>
@@ -68,30 +75,30 @@
 
     <div class="wrap planning">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <a href="@Url.Action("AllTips", "Tip")">
+            <div class="row box-shadow">
+                <div class="col-md-3 col-sm-6">
+                    <a href="@Url.Action("AllTips", "Tip", new { area = String.Empty })">
                         <span class="img_icon icon1"></span>
                         <span class="link_title">I want to learn</span>
                         Learn more about your camera's settings and and how simple adjustments create beautiful photo effects!
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="#">
+                <div class="col-md-3 col-sm-6">
+                    <a href="@Url.Action("AllTips", "Tip", new { area = String.Empty })">
                         <span class="img_icon icon2"></span>
                         <span class="link_title">I want to try</span>
                         Adjust camera settings, take the shot and get feedback.
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="#">
+                <div class="col-md-3 col-sm-6">
+                    <a href="@Url.Action("AllTips", "Tip", new { area = String.Empty })">
                         <span class="img_icon icon3"></span>
                         <span class="link_title">I want to win</span>
                         Test yourself as we challenge you to prove what you have learnt and take part in our contest!
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="#">
+                <div class="col-md-3 col-sm-6">
+                    <a href="@Url.Action("Contact", "Home", new { area = String.Empty })">
                         <span class="img_icon icon4"></span>
                         <span class="link_title">I want to join</span>
                         Join our forum community to share your experience.
@@ -111,9 +118,6 @@
             </div>
         </div>
     </div>
-
-
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

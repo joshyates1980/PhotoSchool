@@ -3,3 +3,11 @@ D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoScho
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\obj\Debug\PhotoSchool.Data.Contracts.dll
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\obj\Debug\PhotoSchool.Data.Contracts.pdb
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\obj\Debug\PhotoSchool.Data.Contracts.csprojResolveAssemblyReference.cache
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\AutoMapper.Net4.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\PhotoSchool.Data.Contracts.dll.config
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\AutoMapper.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\EntityFramework.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\EntityFramework.SqlServer.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\AutoMapper.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\EntityFramework.xml
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Data.Contracts\bin\Debug\EntityFramework.SqlServer.xml

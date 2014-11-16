@@ -20,12 +20,12 @@
                             </div>
                         }
                     </div>
-                    <div>
+                    <div class="col-md-12">
                         @for (int i = 1; i <= ViewBag.Pages; i++)
                         {
                             <a class="btn send_btn" href="@Url.Action("AllPhotos", new { id = i })">@i</a>
                         }
-                        </div>
+                    </div>
                     </div>
             </section>
         </div>

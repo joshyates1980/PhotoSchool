@@ -1,6 +1,7 @@
 ﻿namespace PhotoSchool.Data
 {
     using Microsoft.AspNet.Identity.EntityFramework;
+    using PhotoSchool.Data.Contracts.CodeFirstConventions;
     using PhotoSchool.Data.Contracts.Models;
     using PhotoSchool.Data.Migrations;
     using PhotoSchool.Models;
@@ -9,17 +10,12 @@
     using System.Data.Entity.ModelConfiguration.Conventions;
     using System.Linq;
 
-    public class PhotoSchoolDbContext : IdentityDbContext<ApplicationUser>
+    public class PhotoSchoolDbContext : IdentityDbContext<ApplicationUser>, IPhotoSchoolDbContext
     {
         public PhotoSchoolDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<PhotoSchoolDbContext, Configuration>());
-        }
-
-        public static PhotoSchoolDbContext Create()
-        {
-            return new PhotoSchoolDbContext();
         }
 
         public IDbSet<PhotoSchool.Models.Action> Actions { get; set; }
@@ -42,10 +38,41 @@
 
         public IDbSet<View> Views { get; set; }
 
+        public static PhotoSchoolDbContext Create()
+        {
+            return new PhotoSchoolDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Add(new IsUnicodeAttributeConvention());
+
+            base.OnModelCreating(modelBuilder); // Without this call EntityFramework won't be able to configure the identity model
+        }
+
+        public DbContext DbContext
+        {
+            get
+            {
+                return this;
+            }
+        }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
+            this.ApplyDeletableEntityRules();
             return base.SaveChanges();
+        }
+
+        public new IDbSet<T> Set<T>() where T : class
+        {
+            return base.Set<T>();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
         private void ApplyAuditInfoRules()
@@ -73,6 +100,20 @@
             }
         }
 
-        
+        private void ApplyDeletableEntityRules()
+        {
+            // Approach via @julielerman: http://bit.ly/123661P
+            foreach (
+                var entry in
+                    this.ChangeTracker.Entries()
+                        .Where(e => e.Entity is IDeletableEntity && (e.State == EntityState.Deleted)))
+            {
+                var entity = (IDeletableEntity)entry.Entity;
+
+                entity.DeletedOn = DateTime.Now;
+                entity.IsDeleted = true;
+                entry.State = EntityState.Modified;
+            }
+        }
     }
 }

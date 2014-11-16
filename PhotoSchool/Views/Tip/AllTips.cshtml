@@ -2,14 +2,14 @@
 
 <div class="wrap">
     <div class="container">
-        <section class="top-bottom-space">
-            <div class="row">
-                
+        <section>
+            <h4 class="text-center tiptop">Learn more about your camera's settings and and how simple adjustments create beautiful photo effects!</h4>
+            <div class="row">                
                 @foreach (var tip in Model)
                 {
                     <div class="col-md-4">
                         <div class="panel panel-default">
-                            <div class="panel-body tips-order">
+                            <div class="panel-body tips-order text-justify">
                                 @tip.Content
                             </div>
                         </div>
@@ -17,6 +17,6 @@
                 }
         </div>
     </section>
-</div>
+  </div>
 </div>
 

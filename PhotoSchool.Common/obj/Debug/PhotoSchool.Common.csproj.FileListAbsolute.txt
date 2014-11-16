@@ -1,0 +1,4 @@
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Common\bin\Debug\PhotoSchool.Common.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Common\bin\Debug\PhotoSchool.Common.pdb
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Common\obj\Debug\PhotoSchool.Common.dll
+D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Common\obj\Debug\PhotoSchool.Common.pdb

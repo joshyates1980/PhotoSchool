@@ -4,24 +4,23 @@
     <div class="wrap">
         <div class="container">
             <section>
-                <p>@Model.ShortDescription</p>
+                <h3 class="text-center col-md-7">@Model.ShortDescription</h3>
                 <div class="row pad5">
                     <div class="col-md-8">
                         <div class="post">
                             <img src="@Model.ImageUrl" />
                             <div class="post_info">
-                                <div class="fright"><a href="#">@Model.Views.Count</a> Views</div>
+                                <div class="col-md-4">
+                                    Likes: <span id="photo-votes">@Model.Likes.Count</span>
+                                    @if (User.Identity.IsAuthenticated && ViewBag.CanLike)
+                                    {
+                                        @Ajax.ActionLink("Like", "Upvote", new { id = Model.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "photo-votes", HttpMethod = "Post", OnSuccess = "hideVoteButton" }, new { id = "like-button", @class = "btn send_btn" })
+                                    }
+                                </div>
+                                <div class="col-md-4">@Model.Comments.Count comments</div>
+                                <div class="fright pad0"><a href="#">@Model.Views.Count</a> Views</div>
                                 <div class="clear"></div>
                             </div>
-                            
-                            <div>
-                                Likes: <span id="photo-votes">@Model.Likes.Count</span>
-                                @if (User.Identity.IsAuthenticated && ViewBag.CanLike)
-                                {
-                                    @Ajax.ActionLink("Like", "Upvote", new { id = Model.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "photo-votes", HttpMethod = "Post", OnSuccess = "hideVoteButton" }, new { id = "like-button", @class = "btn send_btn" })
-                                }
-                            </div>
-                            <h4>@Model.Comments.Count comments</h4>
                             <div>
                                 <ol id="comments">
                                     @foreach (var comment in Model.Comments)
@@ -30,7 +29,7 @@
                                     }
                                 </ol>
                             </div>
-                            <h4>Leave a comment</h4>
+                            
                             @if (User.Identity.IsAuthenticated)
                             {
                                 using (Ajax.BeginForm("PostComment", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "comments", OnFailure = "commentPostFailure" }))
@@ -42,18 +41,19 @@
                                     <input type="submit" class="btn send_btn" value="Post Comment" />
                                 }
                             }
+                            else
+                            {
+                                <div>
+                                    @Html.ActionLink("Log in to leave a comment", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink2", @class = "login-css" })
+                                    @Html.ActionLink("Not a user? Register now!", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink2", @class = "login-css" })
+                                </div>
+                            }
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="sidebar" style="padding-top:60px;">
                             <div class="widget">
                                 <h2 class="title"><span>Test your skills!</span></h2>
-                                <ol class="links">
-                                    @foreach (var action in Model.Actions)
-                                    {
-                                        <li>@action.Text</li>
-                                    }
-                                </ol>
                             </div>
                         </div>
                     </div>
