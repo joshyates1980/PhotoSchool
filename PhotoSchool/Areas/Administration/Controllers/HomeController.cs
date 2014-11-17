@@ -2,11 +2,20 @@
 {
     using System.Web.Mvc;
 
-    public class HomeController : Controller
+    using PhotoSchool.Data;
+    using PhotoSchool.Controllers;
+
+    public class HomeController : BaseController
     {
-        //public ActionResult Navigation()
-        //{
-        //    return View();
-        //}
+        public HomeController(IPhotoSchoolData data)
+            : base(data)
+        {
+
+        }
+
+        public ActionResult Navigation()
+        {
+            return View();
+        }
     }
 }

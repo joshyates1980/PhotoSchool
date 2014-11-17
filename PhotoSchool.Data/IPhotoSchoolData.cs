@@ -6,6 +6,8 @@
 
     public interface IPhotoSchoolData
     {
+        IPhotoSchoolDbContext Context { get; }
+
         IRepository<PhotoSchool.Models.Action> Actions { get; }
 
         IRepository<ApplicationUser> Users { get; }
@@ -27,6 +29,8 @@
         IRepository<Tip> Tips { get; }
 
         IRepository<View> Views { get; }
+
+        IRepository<Feedback> Feedbacks { get; }
 
         int SaveChanges();
     }

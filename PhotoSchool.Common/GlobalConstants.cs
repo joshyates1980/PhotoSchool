@@ -1,6 +1,6 @@
 ﻿namespace PhotoSchool.Common
 {
-    public static class GlobalContants
+    public static class GlobalConstants
     {
         public const string Admin = "Admin";
 

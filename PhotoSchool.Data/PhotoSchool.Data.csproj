@@ -62,6 +62,10 @@
     <Compile Include="Repositories\Base\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PhotoSchool.Common\PhotoSchool.Common.csproj">
+      <Project>{0e88f451-e2bd-4099-9868-82b56e7950b5}</Project>
+      <Name>PhotoSchool.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhotoSchool.Data.Contracts\PhotoSchool.Data.Contracts.csproj">
       <Project>{c658f315-8b61-41dd-91d9-cf30568f90a0}</Project>
       <Name>PhotoSchool.Data.Contracts</Name>

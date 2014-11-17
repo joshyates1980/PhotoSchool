@@ -1,0 +1,62 @@
+﻿namespace PhotoSchool.Areas.Administration.Controllers
+{
+    using System;
+    using System.Collections;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using AutoMapper.QueryableExtensions;
+
+    using PhotoSchool.Data;
+    using PhotoSchool.Areas.Administration.Controllers.Base;
+    using PhotoSchool.Areas.Administration.ViewModels;
+
+    using Kendo.Mvc.UI;
+
+    using Model = PhotoSchool.Models.ApplicationUser;
+    using ViewModel = PhotoSchool.Areas.Administration.ViewModels.UserViewModel;
+
+    public class UsersAdminController : KendoGridAdministrationController
+    {
+        public UsersAdminController(IPhotoSchoolData data)
+            : base(data)
+        {
+        }
+
+        public ActionResult AllUsers()
+        {
+            return View();
+        }
+
+        protected override IEnumerable GetData()
+        {
+            return this.Data.Users.All().Project().To<UserViewModel>();
+        }
+
+        protected override T GetById<T>(object id)
+        {
+            return this.Data.Users.GetById(id) as T;
+        }
+
+        [HttpPost]
+        public ActionResult Create([DataSourceRequest]DataSourceRequest request, ViewModel model)
+        {
+            var dbModel = base.Create<Model>(model);
+            if (dbModel != null)
+                model.Id = dbModel.Id;
+            return this.GridOperation(model, request);
+        }
+
+        [HttpPost]
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, ViewModel model)
+        {
+            if (model != null && ModelState.IsValid)
+            {
+                this.Data.Users.Delete(model.Id);
+                this.Data.SaveChanges();
+            }
+
+            return this.GridOperation(model, request);
+        }
+    }
+}

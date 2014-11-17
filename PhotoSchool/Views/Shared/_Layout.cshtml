@@ -25,17 +25,19 @@
                 
                 <div class="col-md-8">
                     <div class="header_right_block fright">
-                        <div class="fleft topbar">
-                            @Html.Partial("_LoginPartial")
-                        </div>
-                        <div class="fleft input-group">
-                            <form action="#" method="post">
-                                <input id="search" class="form-control" name="name" type="text" value="Search the Site" onfocus="if (this.value == 'Search the Site') this.value = '';" onblur="if (this.value == '') this.value = 'Search the Site';" />
+                    <div class="fleft topbar">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                    <div class="fleft input-group">
+                            @using (Ajax.BeginForm("Search", "Home", new AjaxOptions{ HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "glossary"}))
+                            {
+                                <input id="search" class="form-control" name="text" type="text" value="Search in Glossary" onfocus="if (this.value == 'Search in Glossary') this.value = '';" onblur="if (this.value == '') this.value = 'Search in Glossary';" />
                                 <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-search"></span>
+                                    <button id="spyglass" class="glyphicon glyphicon-search" type="submit"></button>
                                 </span>
-                            </form>
-                        </div>                  
+                            }
+                        </div>
+                    <div class="widget">
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -70,9 +72,10 @@
                 </div>
         </div>
     </div>
-
+     @*TO DO fix container*@
+    <div class="wrap container" id="glossary">
+    </div>
         @RenderBody()
-
     <div class="wrap planning">
         <div class="container">
             <div class="row box-shadow">
@@ -84,11 +87,23 @@
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="@Url.Action("AllTips", "Tip", new { area = String.Empty })">
-                        <span class="img_icon icon2"></span>
-                        <span class="link_title">I want to try</span>
-                        Adjust camera settings, take the shot and get feedback.
-                    </a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="@Url.Action("PlayPhoto", "Play", new { area = "Play" })">
+                            <span class="img_icon icon2"></span>
+                            <span class="link_title">I want to try</span>
+                            Adjust camera settings, take the shot and get feedback.
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Login", "Account")">
+                            <span class="img_icon icon2"></span>
+                            <span class="link_title">I want to try</span>
+                            Adjust camera settings, take the shot and get feedback.
+                        </a>
+                    }
+                                                
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="@Url.Action("AllTips", "Tip", new { area = String.Empty })">
@@ -100,8 +115,8 @@
                 <div class="col-md-3 col-sm-6">
                     <a href="@Url.Action("Contact", "Home", new { area = String.Empty })">
                         <span class="img_icon icon4"></span>
-                        <span class="link_title">I want to join</span>
-                        Join our forum community to share your experience.
+                        <span class="link_title">I want to contact</span>
+                        Share your thoughts and let us know what we can do better!
                     </a>
                 </div>
             </div>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PhotoSchool.ViewModels.Glosary.WordsViewModel>
+
+<div class="row">
+    <div class="col-md-6">
+        @foreach (var word in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">
+                        @word.Name
+                    </h3>
+                </div>
+                <div class="panel-body glossary">
+                    @word.Description
+                </div>
+            </div>
+        }
+        @*<div class="post">
+            @for (int i = 1; i <= ViewBag.Pages; i++)
+            {
+                <a class="btn send_btn" href="@Url.Action("AllWords", new { id = i })">@i</a>
+            }
+            <br />
+            <br />
+        </div>*@
+    </div>
+    <div class="col-md-6">
+        <img class="books post" src="@Url.Content("~/Content/img/books3.jpg")" />
+    </div>
+</div>

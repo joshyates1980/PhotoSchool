@@ -1,0 +1,23 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <section id="userInformation" class="top-bottom-space">
+            <h3 class="text-center">Upload an image</h3>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-8 col-md-offset-4">
+                    @using (Html.BeginForm("UploadImage", "Images", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        @Html.AntiForgeryToken()
+                        <input type="file" name="image" />
+                        <div class="form-group top-bottom-space">
+                            <div class="col-md-offset-4 col-md-8">
+                                <input type="submit" class="btn send_btn" value="Select" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

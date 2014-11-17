@@ -11,7 +11,7 @@
 
     public class PhotoSchoolData : IPhotoSchoolData
     {
-        private DbContext context;
+        private IPhotoSchoolDbContext context;
 
         private IDictionary<Type, object> repositories;
 
@@ -20,10 +20,18 @@
         {
         }
 
-        public PhotoSchoolData(DbContext context)
+        public PhotoSchoolData(IPhotoSchoolDbContext context)
         {
             this.context = context;
             this.repositories = new Dictionary<Type, object>();
+        }
+
+        public IPhotoSchoolDbContext Context
+        {
+            get
+            {
+                return this.context;
+            }
         }
 
         public IRepository<PhotoSchool.Models.Action> Actions
@@ -111,6 +119,14 @@
             get
             {
                 return this.GetRepository<View>();
+            }
+        }
+
+        public IRepository<Feedback> Feedbacks
+        {
+            get
+            {
+                return this.GetRepository<Feedback>();
             }
         }
 

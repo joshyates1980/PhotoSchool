@@ -28,6 +28,8 @@
 
         IDbSet<View> Views { get; set; }
 
+        IDbSet<Feedback> Feedbacks { get; set; }
+
         int SaveChanges();
 
         void Dispose();

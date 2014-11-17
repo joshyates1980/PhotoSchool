@@ -31,9 +31,9 @@
                 Description = x.Description
             }).OrderBy(x => x.Name);
 
-            var glosary = allWords.Skip((pageNumber - 1) * PageSize).Take(PageSize);
+            var glossary = allWords.Skip((pageNumber - 1) * PageSize).Take(PageSize);
             ViewBag.Pages = Math.Ceiling((double)allWords.Count() / PageSize);
-            return View(glosary);
+            return View(glossary);
         }
     }
 }

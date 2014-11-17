@@ -1158,7 +1158,12 @@ a {
 .row.box-shadow{
     margin-bottom:10px;
 }
-
+#spyglass{
+    border:none;
+}
+.admin{
+    margin-bottom:30px;
+}
 
 
 

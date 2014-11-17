@@ -14,30 +14,17 @@ namespace PhotoSchool
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Display photo's details",
-                url: "photos/{action}/{id}",
-                defaults: new { controller = "Photos", action = "PhotoDetails", id = UrlParameter.Optional },
-                namespaces: new[] { "PhotoSchool.Web.Controllers"}
-            );
-
-            //routes.MapRoute(
-            //    name: "Display question",
-            //    url: "questions/{id}/{url}",
-            //    defaults: new { controller = "Questions", action = "Display" }
-            //);
-
-            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] { "PhotoSchool.Web.Controllers"}
+                namespaces: new[] { "PhotoSchool.Controllers"}
             );
 
             routes.MapRoute(
                 name: "StaticPages",
                 url: "{action}",
                 defaults: new { controller = "Home" },
-                namespaces: new[] { "PhotoSchool.Web.Controllers" }
+                namespaces: new[] { "PhotoSchool.Controllers" }
             );
         }
     }

@@ -1,0 +1,158 @@
+﻿<div class="col-md-3">
+    <a href="@Url.Action("UploadImage", "Images", new { area = "Play" })">
+        Test Upload image
+    </a>
+</div>
+<div id="simulator_container">
+    <div id="simulator">
+        <div id="image">
+            <img src="@Url.Content("~/Content/img/play/normal_exposure.png")" alt="" />
+            <div class="image_shadow"></div>
+        </div>
+
+        <div id="sliders">
+            <div id="slider_options">
+                <a href="#" class="btn_manual current">Manual (M)</a>
+                <a href="#" class="btn_shutter">Shutter Priority (Tv)</a>
+                <a href="#" class="btn_aperture">Aperture Priority (Av)</a>
+            </div>
+
+            <div id="find_it_btn"><a href="#" class="btn_find_it">Why use this mode?</a></div>
+
+            <div id="aperture" class="slider_content">
+                <h2>Aperture: <span></span></h2>
+                <div class="slider_container">
+                    <div class="slider"></div>
+                </div>
+                <div class="slider_vals"></div>
+            </div>
+            <div id="shutter" class="slider_content">
+                <h2>Shutter Speed: <span></span></h2>
+                <div class="slider_container">
+                    <div class="slider"></div>
+                </div>
+                <div class="slider_vals"></div>
+            </div>
+            <div id="iso" class="slider_content">
+                <h2>ISO: <span></span></h2>
+                <div class="slider_container">
+                    <div class="slider"></div>
+                </div>
+                <div class="slider_vals"></div>
+            </div>
+        </div>
+
+        <div id="exposure" class="exposure_content">
+            <h2>Exposure Meter: <span></span></h2>
+            <div class="slider_container">
+                <div class="slider"></div>
+            </div>
+            <div class="slider_vals"></div>
+        </div>
+
+        <div id="photo_affects">
+            <h2>Picture Effects</h2>
+            <div class="photo_icons">
+                <span id="icon_depth"></span>
+                <span id="icon_motion"></span>
+                <span id="icon_noise"></span>
+            </div>
+        </div>
+
+        <a href="#" id="btn_take_photos"><img src="@Url.Content("~/Content/img/play/btn_take_photo.png")" alt="Take photo" /></a>
+    </div>
+
+    @Html.Partial("_SimulatorSidePartial")
+
+    @Html.Partial("_PopupsPartial") 
+</div>
+@section scripts{
+    <script type="text/javascript">
+    var exposureTags = [
+	    {
+		    title:"Very Overexposed",
+		    notes: [
+			    "There is too much light, your photo is washed out. Try making your aperture smaller by changing to a higher f-stop number.",
+			    "You’re letting in too much light for a good exposure. Check that your shutter speed is not open for too long. A faster shutter speed will reduce the amount of light in your exposure.",
+			    "Your photo has been washed out by too much light. Try adjusting your ISO to a lower value."
+		    ]
+	    },
+	    {
+		    title:"Slightly Overexposed",
+		    notes: [
+			    "Your photo is missing some detail because you have too much light coming into your camera. Try making your aperture smaller by moving up a couple of stops (or clicks).",
+			    "Your photo is a little washed out because you have too much light. Try setting your ISO to a lower sensitivity.",
+			    "Your photo could be sharper. Try changing the speed of your shutter to a faster, shorter value."
+		    ]
+	    },
+	    {
+		    title:"Good Exposure",
+		    notes: [
+			    "Look at where your aperture is set so you remember the next time you’re shooting in a similar setting.",
+			    "This shutter speed gives you a great result.",
+			    "Your ISO setting is giving you a great photo. Remember this setting for when you are in this type of environment again."
+		    ]
+	    },
+	    {
+		    title:"Slightly Underexposed",
+		    notes: [
+			    "Your photo is missing some detail because is not enough light coming into your camera. Try making your aperture bigger by moving down a couple of stops (or clicks).",
+			    "Your photo is a little dark because you’re not capturing enough light. Try bumping your ISO to a higher sensitivity.",
+			    "Your photo is still a little too dark. Try letting in more light by changing the speed of your shutter to a longer, slower value."
+		    ]
+	    },
+	    {
+		    title:"Very Underexposed",
+		    notes: [
+			    "There isn't enough light, so your photo doesn’t show up. Try making your aperture larger by changing to a smaller f-stop number.",
+			    "You're not capturing enough light to see your subject. Adjust your shutter speed for a longer time. A slower shutter speed will let more light in to your camera.",
+			    "Your photo doesn’t have enough light so it doesn’t show up. Try adjusting your ISO to a higher value."
+		    ]
+	    }
+    ];
+    var apertureTags = [
+	    {
+		    title:"Shallow Depth of Field",
+		    notes: [
+			    "Your f-stop setting is low, giving you a wide open lens. This means that the area of focus will be smaller.",
+			    "A low f-stop value like this will isolate your subject from the background.",
+			    "Your current aperture setting gives you a short or narrow depth of field. Notice how your subject is sharper than your background."
+		    ]
+	    },
+	    {
+		    title:"Wide Depth of Field",
+		    notes: [
+			    "Your f-stop setting is high, giving you a smaller lens opening. This means that the area of focus will be wider.",
+			    "A high f-stop value like this will let you keep the entire scene in focus.",
+			    "Your current aperture setting gives you a larger depth of field. Notice how your subject and the background are both in focus."
+		    ]
+	    }
+    ];
+    var shutterTags = [
+	    {
+		    title:"Invisible Motion",
+		    notes: [
+			    "You are currently on a slow shutter speed. This will turn motion into a ghost in your photo.",
+			    "Remember at this shutter speed anything that moves that fast will be close to invisible. To capture the movement, increase your shutter speed.",
+			    "When shooting with slow shutter speed like this any movement of the camera will show. Make sure the camera is steadied or use a tripod."
+		    ]
+	    },
+	    {
+		    title:"Show Motion",
+		    notes: [
+			    "Now you see it! You’ve left your shutter open just long enough to capture some movement.",
+			    "This shutter speed is fast but you can still see blur of motion. To freeze the motion, increase the shutter speed.",
+			    "Your shutter speed setting makes the motion of your photo blurry. If you want to make it look smoother try a slower shutter speed."
+		    ]
+	    },
+	    {
+		    title:"Stop Motion",
+		    notes: [
+			    "You’ve frozen the motion in your shot with a fast shutter speed.",
+			    "Your shutter speed is so fast that the motion in your shot looks like it’s frozen in time.",
+			    "This shutter speed is fast so it captures the detail of movement making it look like it’s not moving at all."
+		    ]
+	    }
+    ];
+    </script>
+}

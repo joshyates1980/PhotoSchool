@@ -51,6 +51,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET MVC Q2 2014\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -193,7 +196,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\Base\AdminController.cs" />
     <Compile Include="Areas\Administration\Base\KendoGridAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\AdminController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\KendoGridAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\GlossaryAdminController.cs" />
+    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UsersAdminController.cs" />
     <Compile Include="Areas\Administration\Models\Base\AdministrationViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\WordsViewModel.cs" />
+    <Compile Include="Areas\PhotoContest\PhotoContestAreaRegistration.cs" />
+    <Compile Include="Areas\Play\Controllers\ImagesController.cs" />
+    <Compile Include="Areas\Play\Controllers\PlayController.cs" />
+    <Compile Include="Areas\Play\PlayAreaRegistration.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\PhotoContestController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
@@ -254,6 +268,16 @@
     <Content Include="Content\img\li-marker.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\moto.jpg" />
+    <Content Include="Content\img\play\bg_simulator.png" />
+    <Content Include="Content\img\play\btn_gallery_close.png" />
+    <Content Include="Content\img\play\btn_take_photo.png" />
+    <Content Include="Content\img\play\exposure_over1.png" />
+    <Content Include="Content\img\play\exposure_over2.png" />
+    <Content Include="Content\img\play\exposure_over3.png" />
+    <Content Include="Content\img\play\exposure_under1.png" />
+    <Content Include="Content\img\play\exposure_under2.png" />
+    <Content Include="Content\img\play\exposure_under3.png" />
+    <Content Include="Content\img\play\normal_exposure.png" />
     <Content Include="Content\img\settingsbg\bg-compare-aperture_en.png" />
     <Content Include="Content\img\settingsbg\bg-compare-exposure_en.png" />
     <Content Include="Content\img\settingsbg\bg-compare-iso_en.png" />
@@ -490,6 +514,29 @@
     <Content Include="Content\kendo\images\kendoui.woff" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Play\Views\web.config" />
+    <Content Include="Areas\PhotoContest\Views\web.config" />
+    <Content Include="Areas\Play\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Play\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Play\Views\Play\PlayPhoto.cshtml" />
+    <Content Include="Areas\Play\Views\Play\_SimulatorSidePartial.cshtml" />
+    <Content Include="Areas\Play\Views\Play\_PopupsPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\Navigation.cshtml" />
+    <Content Include="Areas\Administration\Views\UsersAdmin\AllUsers.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Areas\Administration\Views\GlossaryAdmin\AllWords.cshtml" />
+    <Content Include="Areas\Play\Views\Images\UploadImage.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -569,17 +616,25 @@
     <Content Include="Views\Settings\ApertureSettings.cshtml" />
     <Content Include="Views\Settings\IsoSettings.cshtml" />
     <Content Include="Views\Settings\ShutterSpeedSettings.cshtml" />
+    <Content Include="Views\Settings\_SettingsPartial.cshtml" />
+    <Content Include="Views\Home\_AllWordsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Controllers\" />
-    <Folder Include="Areas\Administration\Views\KendoGridAdministration\" />
+    <Folder Include="Areas\PhotoContest\Controllers\" />
+    <Folder Include="Areas\PhotoContest\Models\" />
+    <Folder Include="Areas\PhotoContest\Views\Shared\" />
+    <Folder Include="Areas\Play\Models\" />
     <Folder Include="Content\img\contests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PhotoSchool.Common\PhotoSchool.Common.csproj">
+      <Project>{0e88f451-e2bd-4099-9868-82b56e7950b5}</Project>
+      <Name>PhotoSchool.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhotoSchool.Data.Contracts\PhotoSchool.Data.Contracts.csproj">
       <Project>{c658f315-8b61-41dd-91d9-cf30568f90a0}</Project>
       <Name>PhotoSchool.Data.Contracts</Name>

@@ -38,6 +38,8 @@
 
         public IDbSet<View> Views { get; set; }
 
+        public IDbSet<Feedback> Feedbacks { get; set; }
+
         public static PhotoSchoolDbContext Create()
         {
             return new PhotoSchoolDbContext();
