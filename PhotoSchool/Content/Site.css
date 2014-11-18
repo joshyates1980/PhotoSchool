@@ -586,27 +586,6 @@ ul.tweets li {
 	padding-bottom:0;
 	margin-bottom:0;
 }
-.flickrs {margin-right:-10px;
-}
-.FlickrImages li {
-	margin:0 6px 6px 0 !important;
-	padding:0 !important;
-	float:left;	
-	border:0 !important;
-}
-.FlickrImages li a {
-	display:block;
-	width:63px !important;
-	height:63px !important;
-	overflow:hidden;
-	float:left;
-}
-.FlickrImages li a img {
-	width:63px !important;
-	height:63px !important;
-	border:0;
-	border-radius:3px;
-}
 .author {
 	padding-top:7px;
 	color:#d00b01;
@@ -1059,12 +1038,12 @@ ul.recent_post div a:hover {color:#d00b01;
 
 .send_btn {
     color: #fff;
-    background: #313131 !important;
+    background: #d00b01 !important;
 }
 
     .send_btn:hover {
-        color: #fff;
-        background-color:#d00b01 !important;
+        color: #000;
+        background-color:#eee !important;
     }
 
 .bottom-space {

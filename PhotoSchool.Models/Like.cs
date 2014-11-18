@@ -7,6 +7,7 @@
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public bool IsPositive { get; set; }
 
         public string AuthorId { get; set; }

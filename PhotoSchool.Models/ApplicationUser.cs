@@ -18,11 +18,14 @@
             this.CreatedOn = DateTime.Now;
             this.Photos = new HashSet<Photo>();
             this.Contests = new HashSet<PhotoContest>();
+            this.Views = new HashSet<View>();
         }
 
         public virtual ICollection<Photo> Photos { get; set; }
 
         public virtual ICollection<PhotoContest> Contests { get; set; }
+
+        public virtual ICollection<View> Views { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

@@ -32,8 +32,11 @@
                             
                             @if (User.Identity.IsAuthenticated)
                             {
-                                using (Ajax.BeginForm("PostComment", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "comments", OnFailure = "commentPostFailure" }))
+                                using (Ajax.BeginForm("PostComment", "Comments", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "comments", OnFailure = "commentPostFailure" }))
                                 {
+                                    @Html.ValidationSummary(true, string.Empty, new { @class = "text-danger" })
+                                    @Html.AntiForgeryToken()
+                                
                                     @Html.Hidden("PhotoId", Model.Id)
                                     @Html.TextArea("comment", new { @class = "form-control bottom-space" })
                                     @Html.AntiForgeryToken()

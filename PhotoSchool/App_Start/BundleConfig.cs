@@ -27,9 +27,6 @@ namespace PhotoSchool
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                         "~/Scripts/custom.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                        "~/Scripts/simulator.js"));
-
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -43,7 +40,11 @@ namespace PhotoSchool
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/kendo").Include("~/Content/kendo/kendo.common.min.css",
+            bundles.Add(new StyleBundle("~/Content/simulator").Include(
+                      "~/Content/simulator.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+                        "~/Content/kendo/kendo.common.min.css",
                         "~/Content/kendo/kendo.common-bootstrap.min.css",
                         "~/Content/kendo/kendo.silver.min.css"));
 

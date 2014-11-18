@@ -34,8 +34,7 @@ namespace PhotoSchool.Data.Migrations
 
         protected override void Seed(PhotoSchoolDbContext context)
         {
-            //this.userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            //this.SeedUsers(context);
+            this.SeedRolesAndUsers(context);
             this.SeedWords(context);         
             this.SeedSettings(context);
             this.SeedTips(context);
@@ -43,34 +42,22 @@ namespace PhotoSchool.Data.Migrations
             //this.SeedPhotoContest(context);
         }
 
-        private void SeedRoles(PhotoSchoolDbContext context)
+        private void SeedRolesAndUsers(PhotoSchoolDbContext context)
         {
-            context.Roles.AddOrUpdate(x => x.Name, new IdentityRole(GlobalConstants.Admin));
-            context.SaveChanges();
-        }
+            if (!context.Users.Any())
+            {
+                var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+                roleManager.Create(new IdentityRole(GlobalConstants.Admin));
+                roleManager.Create(new IdentityRole(GlobalConstants.User));
 
-        private void SeedUsers(PhotoSchoolDbContext context)
-        {
-            if (context.Users.Any())
-            {
-                return;
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                var user = new ApplicationUser { UserName = "v@abv.bg" };
+                userManager.Create(user, "123456");
+                userManager.AddToRole(user.Id, "Admin");
+                userManager.AddToRole(user.Id, "User");
+
+                context.SaveChanges();
             }
-            for (int i = 0; i < 10; i++)
-            {
-                var user = new ApplicationUser
-                {
-                    Email = string.Format("{0}@{1}.com", this.random.RandomString(6, 16), this.random.RandomString(6, 16)),
-                    UserName = this.random.RandomString(6, 16)
-                };
-                this.userManager.Create(user, "123456");
-            }
-            var adminUser = new ApplicationUser
-            {
-                Email = "admin@mysite.com",
-                UserName = "Administrator"
-            };
-            this.userManager.Create(adminUser, "admin123456");
-            this.userManager.AddToRole(adminUser.Id, GlobalConstants.Admin);
         }
 
         protected void SeedWords(PhotoSchoolDbContext context)

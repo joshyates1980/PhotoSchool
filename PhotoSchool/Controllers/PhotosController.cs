@@ -26,6 +26,7 @@
 
         }
 
+        [HttpGet]
         public ActionResult AllPhotos(int? id)
         {
             int pageNumber = id.GetValueOrDefault(1);
@@ -43,6 +44,7 @@
             return View(photos);
         }
 
+        [HttpGet]
         public ActionResult PhotoDetails(int id)
         {
             if (id == null)
@@ -68,7 +70,6 @@
                 Id = photo.Id,
                 ShortDescription = photo.ShortDescription,
                 ImageUrl = photo.ImageUrl,
-                Actions = actions,
                 Comments = comments,
                 Likes = photo.Likes,
                 Views = photo.Views
@@ -89,32 +90,6 @@
                 return HttpNotFound();
             }
             return View(photoModel);
-        }
-
-        
-        [Authorize]
-        [ValidateAntiForgeryToken]
-        public ActionResult PostComment(SubmitCommentViewModel commentModel)
-        {
-            if (ModelState.IsValid)
-            {
-                var username = this.User.Identity.GetUserName();
-                var userId = this.User.Identity.GetUserId();
-                var comment = new Comment()
-                {
-                    AuthorId = userId,
-                    Text = commentModel.Comment,
-                    PhotoId = commentModel.PhotoId,
-                    CreatedOn = DateTime.Now
-                };
-
-                this.Data.Comments.Add(comment);
-                this.Data.SaveChanges();
-
-                var viewModel = new CommentViewModel { AuthorUsername = username, Text = comment.Text, CreatedOn = comment.CreatedOn };
-                return PartialView("_CommentPartial", viewModel);
-            }
-            return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest, ModelState.Values.First().ToString());
         }
 
         public ActionResult Upvote(int id)
@@ -139,31 +114,5 @@
 
             return Content(votes.ToString());
         }
-
-        //public ActionResult Search(SubmitSearchModel submitModel)
-        //{
-        // var result = this.Data.Laptops.All();
-        // if (!string.IsNullOrEmpty(submitModel.ModelSearch))
-        // {
-        // result = result.Where(x => x.Model.ToLower().Contains(submitModel.ModelSearch.ToLower()));
-        // }
-        // if (submitModel.ManufSearch != "All")
-        // {
-        // result = result.Where(x => x.Manufacturer.Name == submitModel.ManufSearch);
-        // }
-        // if (submitModel.PriceSearch != 0)
-        // {
-        // result = result.Where(x => x.Price < submitModel.PriceSearch);
-        // }
-        // var endResult = result.Select(x => new LaptopViewModel
-        // {
-        // Id = x.Id,
-        // Model = x.Model,
-        // Manufacturer = x.Manufacturer.Name,
-        // ImageUrl = x.ImageUrl,
-        // Price = x.Price
-        // });
-        // return View(endResult);
-        //}
     }
 }

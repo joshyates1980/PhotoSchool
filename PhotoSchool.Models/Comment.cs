@@ -8,6 +8,8 @@
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(2000, MinimumLength = 10)]
         public string Text { get; set; }
 
         public string AuthorId { get; set; }

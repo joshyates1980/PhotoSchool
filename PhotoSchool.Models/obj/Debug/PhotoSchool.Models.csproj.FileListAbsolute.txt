@@ -14,4 +14,3 @@ D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoScho
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\PhotoSchool.Data.Contracts.dll
 D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\PhotoSchool.Data.Contracts.pdb
-D:\Vanina\VisualStudio_Projects 2013 - 2014\ASP.NET\Individual project\PhotoSchool\PhotoSchool.Models\bin\Debug\AutoMapper.Net4.dll

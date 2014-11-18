@@ -10,12 +10,6 @@
 
     public class PhotoViewModel : IMapFrom<Photo>
     {
-        public PhotoViewModel()
-        {
-            this.Actions = new List<ActionViewModel>();
-            this.Views = new List<View>();
-        }
-
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
@@ -25,9 +19,6 @@
         public string ImageUrl { get; set; }
 
         public ICollection<CommentViewModel> Comments { get; set; }
-
-        [UIHint("Action")]
-        public ICollection<ActionViewModel> Actions { get; set; }
 
         public ICollection<Like> Likes { get; set; }
 

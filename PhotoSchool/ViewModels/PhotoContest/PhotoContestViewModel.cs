@@ -4,9 +4,11 @@
     using PhotoSchool.Models;
     using System;
     using System.Collections.Generic;
+    using System.Web.Mvc;
 
     public class PhotoContestViewModel: IMapFrom<PhotoContest>
     {
+        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
         public string Title { get; set; }

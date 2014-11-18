@@ -15,6 +15,7 @@
         {
         }
 
+        [HttpGet]
         public ActionResult ApertureSettings()
         {
             var aperture = this.Data.Settings.GetById(1);
@@ -31,6 +32,7 @@
             return View(apertureModel);
         }
 
+        [HttpGet]
         public ActionResult ExposureSettings()
         {
             var exposure = this.Data.Settings.GetById(2);
@@ -47,6 +49,7 @@
             return View(exposureModel);
         }
 
+        [HttpGet]
         public ActionResult IsoSettings()
         {
             var iso = this.Data.Settings.GetById(3);
@@ -63,6 +66,7 @@
             return View(isoModel);
         }
 
+        [HttpGet]
         public ActionResult ShutterSpeedSettings()
         {
             var shutterSpeed = this.Data.Settings.GetById(4);

@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhotoSchool</title>
+    @Styles.Render("~/Content/kendo")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jqueryajax")
+    @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
 </head>
@@ -54,6 +56,10 @@
                         <nav id="main_menu">
                             <div class="menu_wrap">
                                 <ul class="nav sf-menu">
+                                    @*@if (User.IsInRole("Admin"))
+                                    {
+                                        <li>@Html.ActionLink("Admin", "Navigation", "Home", new { area = "Administration" }, new { })</li>
+                                    }*@
                                     @if (User.Identity.IsAuthenticated)
                                     {
                                         <li>@Html.ActionLink("Admin", "Navigation", "Home", new { area = "Administration" }, new { })</li>
@@ -71,6 +77,7 @@
                     </div>
                 </div>
         </div>
+    </div>
     </div>
      @*TO DO fix container*@
     <div class="wrap container" id="glossary">

@@ -16,6 +16,7 @@
         {
         }
 
+        [HttpGet]
         public ActionResult AllTips(int? id)
         {
             var tips = this.Data.Tips.All().Select(x => new TipViewModel

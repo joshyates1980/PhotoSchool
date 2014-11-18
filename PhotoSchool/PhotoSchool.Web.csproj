@@ -194,8 +194,6 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Administration\Base\AdminController.cs" />
-    <Compile Include="Areas\Administration\Base\KendoGridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\KendoGridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\GlossaryAdminController.cs" />
@@ -227,6 +225,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
     <Compile Include="ViewModels\Glosary\WordsViewModel.cs" />
     <Compile Include="ViewModels\PhotoContest\PhotoContestViewModel.cs" />
     <Compile Include="ViewModels\Settings\SettingViewModel.cs" />
@@ -237,6 +236,8 @@
     <Compile Include="ViewModels\Photo\PhotoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\award.jpg" />
+    <Content Include="Content\img\book.jpg" />
     <Content Include="Content\img\books3.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -245,6 +246,7 @@
     <Content Include="Content\img\01_twitter.png" />
     <Content Include="Content\img\02_facebook.png" />
     <Content Include="Content\img\14_google.png" />
+    <Content Include="Content\img\camera.jpg" />
     <Content Include="Content\img\camera_hd.jpg" />
     <Content Include="Content\img\examples\ge1.jpg" />
     <Content Include="Content\img\examples\ge2.jpg" />
@@ -282,6 +284,7 @@
     <Content Include="Content\img\settingsbg\bg-compare-exposure_en.png" />
     <Content Include="Content\img\settingsbg\bg-compare-iso_en.png" />
     <Content Include="Content\img\settingsbg\bg-compare-shutter-speed_en.png" />
+    <Content Include="Content\img\users.jpg" />
     <Content Include="Content\kendo\Black\editor.png" />
     <Content Include="Content\kendo\Black\imagebrowser.png" />
     <Content Include="Content\kendo\Black\indeterminate.gif" />
@@ -497,6 +500,7 @@
     <Content Include="Content\kendo\Uniform\slider-v.gif" />
     <Content Include="Content\kendo\Uniform\sprite.png" />
     <Content Include="Content\kendo\Uniform\sprite_2x.png" />
+    <Content Include="Content\simulator.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

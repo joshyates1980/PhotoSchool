@@ -4,9 +4,11 @@
     using PhotoSchool.Models.Enumerations;
     using PhotoSchool.Web.Infrastructure.Mapping;
     using System.Collections.Generic;
+    using System.Web.Mvc;
 
     public class SettingViewModel : IMapFrom<CameraSetting>
     {
+        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
         public SettingType SettingType { get; set; }

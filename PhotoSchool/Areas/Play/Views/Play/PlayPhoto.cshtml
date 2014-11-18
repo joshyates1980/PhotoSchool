@@ -1,12 +1,12 @@
-﻿<div class="col-md-3">
+﻿@*<div class="col-md-3">
     <a href="@Url.Action("UploadImage", "Images", new { area = "Play" })">
         Test Upload image
     </a>
-</div>
-<div id="simulator_container">
+</div>*@
+<div id="simulator_container" class="container">
     <div id="simulator">
         <div id="image">
-            <img src="@Url.Content("~/Content/img/play/normal_exposure.png")" alt="" />
+            <img src="@Url.Content("~/Content/img/play/normal_exposure.png")" alt="exposure" />
             <div class="image_shadow"></div>
         </div>
 

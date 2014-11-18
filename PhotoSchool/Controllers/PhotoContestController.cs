@@ -34,6 +34,7 @@ namespace PhotoSchool.Controllers
             return View(contests);
         }
 
+        [HttpGet]
         public ActionResult ContestDetails(int id)
         {
             if (id == null)

@@ -22,6 +22,7 @@ namespace PhotoSchool.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult UploadImage(HttpPostedFileBase image, int contestId)
         {
             if (image != null)

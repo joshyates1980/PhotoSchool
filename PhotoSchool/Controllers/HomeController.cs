@@ -8,6 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PhotoSchool.Data.Contracts.Repository;
+using PhotoSchool.Web.Infrastructure;
+using PhotoSchool.ViewModels.Contact;
+using Microsoft.AspNet.Identity;
 
 namespace PhotoSchool.Controllers
 {
@@ -27,16 +31,54 @@ namespace PhotoSchool.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
-            var feedback = new Feedback();
-            return View(feedback);
+            var model = new ContactViewModel();
+            return this.View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Contact(ContactViewModel input)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = string.Empty;
+
+                if (this.User.Identity.IsAuthenticated == true)
+                {
+                    userId = this.User.Identity.GetUserId();
+                }
+                else
+                {
+                    userId = null;
+                }
+
+                var feedback = new Feedback
+                {
+                    Name = input.Name,
+                    Subject = input.Subject,
+                    Email = input.Email,
+                    Text = input.Text
+                };
+
+                this.Data.Feedbacks.Add(feedback);
+                this.Data.SaveChanges();
+
+                return this.RedirectToAction("About");
+            }
+            return this.View(input);
+        }
+
+        //public ActionResult Contact()
+        //{
+        //    var feedback = new Feedback();
+        //    return View(feedback);
+        //}
 
         [HttpPost]
         public ActionResult Search(string text)

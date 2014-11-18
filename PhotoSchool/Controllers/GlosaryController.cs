@@ -20,6 +20,7 @@
         {
         }
 
+        [HttpGet]
         public ActionResult AllWords(int? id)
         {
             int pageNumber = id.GetValueOrDefault(1);
